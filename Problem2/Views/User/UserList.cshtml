@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Problem2.Models.User>
+@{
+    ViewBag.Title = "User List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <div class="col-sm-12 col-lg-12">
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="text-align:center;">
+                User List
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <table class="table" style="border:2px solid black">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+            </tr>
+
+            @foreach (var userData in Model)
+            {
+
+                <tr>
+                    <td>@Html.DisplayFor(modeluserData => userData.UserId)</td>
+                    <td>@Html.DisplayFor(modeluserData => userData.UserName)</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

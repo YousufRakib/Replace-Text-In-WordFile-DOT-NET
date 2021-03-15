@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ReplaceWordFile";
+}
+
+@using (Html.BeginForm("FindText", "User",FormMethod.Post, new { enctype = "multipart/form-data", @id = "idForm" }))
+{
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2>UploadFile</h2>
+            <input type="file" id="dataFile" name="upload" />
+            @*@Html.TextBox("file1", "", new { type = "file" }) <br />*@
+        </div>
+
+        <div class="col-md-6">
+            <br />
+            @*<h2>Upload Replace File</h2>
+                @Html.TextBox("file2", "", new { type = "file" }) <br />*@
+            <input type="text" name="existingText" id="existingText" placeholder="Existing Text" />
+            <input type="text" name="replaceText" id="replaceText" placeholder="Replace Text" />
+        </div>
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <input type="submit" value="Replace" />
+        </div>
+        <div class="col-md-4"></div>
+
+        <label style="color:red">
+            @ViewBag.Message
+        </label>
+
+    </div>
+}  
